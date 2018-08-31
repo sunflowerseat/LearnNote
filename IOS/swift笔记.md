@@ -51,14 +51,16 @@ extension DefectReviewVC : UITextFieldDelegate{
 
 ## 为VC新建一个带参数的init方法
 
+`带参数init`
+
 ```swif
-	convenience init(callback : @escaping (String) -> Void) {
-		self.init(nibName: nil, bundle: nil)
-		self.callback = callback
-	}
-	
-	override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-		super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-	}
+convenience init(callback : @escaping (String) -> Void) {
+	self.init(nibName: nil, bundle: nil)
+	self.callback = callback
+}
+
+override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+	super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+}
 ```
 
