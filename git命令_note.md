@@ -1,0 +1,43 @@
+---
+Author : Fancy
+Time : 2018-09-05 16:08:19
+---
+
+# git 命令汇总
+
+```
+git clone git@git.archtab.com:Panama_ios_v1.1
+git clone git@git.archtab.com:Panama_android_v2.2
+```
+
+
+
+关键字 ： `回滚 | reverse `
+
+```
+  $ git reset --hard HEAD^         回退到上个版本
+  $ git reset --hard HEAD~3        回退到前3次提交之前，以此类推，回退到n次提交之前
+  $ git reset --hard commit_id     退到/进到 指定commit的sha码
+```
+
+
+关键字 ：`克隆 | clone`
+
+```
+git clone xxx
+```
+
+
+
+关键字 ： `日志 | log`
+
+```
+git log
+```
+
+关键字 ： `撤销 | revert`
+
+```
+git revert HEAD: 撤销最近的一个提交.
+```
+
