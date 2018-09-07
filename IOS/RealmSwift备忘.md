@@ -20,17 +20,17 @@ var config = Realm.Configuration(
 ## 主键声明
 
 ```swift
-	override static func primaryKey() -> String {
-		return "projectItpFieldValueId"
-	}
+override static func primaryKey() -> String {
+	return "projectItpFieldValueId"
+}
 ```
 
 ## 忽略属性
 
 ```swift
-    override static func ignoredProperties() -> [String] {
-        return ["tmpID"]
-    }
+override static func ignoredProperties() -> [String] {
+    return ["tmpID"]
+}
 ```
 
 ## 属性备忘单
