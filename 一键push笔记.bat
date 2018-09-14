@@ -1,4 +1,5 @@
 cd /d D:/LearnNote
+git pull
 git add .
-git commit -m "add note 0914"
+git commit -m "commit"
 git push
