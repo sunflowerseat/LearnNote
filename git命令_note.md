@@ -41,3 +41,10 @@ git log
 git revert HEAD: 撤销最近的一个提交.
 ```
 
+
+
+
+
+windows 在某个文件夹打开cmd
+
+shift + 右键 ->  W (在此处打开命令行窗口) -> 回车(Enter)
