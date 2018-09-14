@@ -48,3 +48,20 @@ git revert HEAD: 撤销最近的一个提交.
 windows 在某个文件夹打开cmd
 
 shift + 右键 ->  W (在此处打开命令行窗口) -> 回车(Enter)
+
+
+
+git 不用每次输密码
+
+执行 `git config --global credential.helper store`
+
+然后正常git push 步骤执行一次 ，以后不用再输密码
+
+
+
+一键push
+
+```
+git add . && git commit -m 'xxx' && git pull && git push
+```
+
