@@ -62,6 +62,6 @@ git 不用每次输密码
 一键push
 
 ```
-git add . && git commit -m 'xxx' && git pull && git push
+git add . && git commit -m 'xxx1' && git pull && git push
 ```
 
