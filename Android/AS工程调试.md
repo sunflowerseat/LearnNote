@@ -4,3 +4,6 @@
 
 AS 最下方 Message -> Gradle Console [注意 不是Event log]
 
+- 调出工具栏 View -> Toolbar
+
+  ![toolbar.png](toolbar.png)
