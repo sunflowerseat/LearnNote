@@ -26,20 +26,35 @@ File -> Data
 ## 处理键盘遮挡
 
 ```Swift
+//简单处理
 extension DefectReviewVC : UITextFieldDelegate{
 	func textFieldDidBeginEditing(_ textField: UITextField) {
 		UIView.animate(withDuration: 0.4) {
-			if(textField == self.commentTextField){
-				self.view.frame.origin.y = -390
-			}else{
-				self.view.frame.origin.y = -150
-			}
+			
 		}
 	}
 	
 	func textFieldDidEndEditing(_ textField: UITextField) {
 		UIView.animate(withDuration: 0.4) {
 			self.view.frame.origin.y = 0
+		}
+	}
+}
+
+//Scroll 和 根据TF高度处理
+extension ItpActivityView : UITextFieldDelegate{
+	func textFieldDidBeginEditing(_ textField: UITextField) {
+		let relate = textField.convert(textField.bounds.origin, from: app.window)
+		UIView.animate(withDuration: 0.4) {
+			self.scroll.frame.origin.y = relate.y + 300
+			self.content.frame.origin.y = relate.y + 300
+		}
+	}
+	
+	func textFieldDidEndEditing(_ textField: UITextField) {
+		UIView.animate(withDuration: 0.4) {
+			self.scroll.frame.origin.y = 0
+			self.content.frame.origin.y = 0
 		}
 	}
 }
