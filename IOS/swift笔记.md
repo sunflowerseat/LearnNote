@@ -79,3 +79,49 @@ override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
 }
 ```
 
+
+
+## 监听返回按钮
+
+监听系统返回按钮
+
+```Swift
+import UIKit
+
+class MyNavigationController: UINavigationController ,UINavigationBarDelegate{
+    func navigationBar(_ navigationBar: UINavigationBar, shouldPop item: UINavigationItem) -> Bool {
+        var shouldPop = true
+        if let viewController = topViewController as? NavigationControllerBackButtonDelegate {
+            shouldPop = viewController.shouldPopOnBackButtonPress()
+        }
+
+        if(shouldPop){
+            self.popViewController(animated: true)
+        }
+
+        return shouldPop
+    }
+}
+
+protocol NavigationControllerBackButtonDelegate {
+    func shouldPopOnBackButtonPress() -> Bool
+}
+```
+
+
+
+`ViewController`继承`NavigationControllerBackButtonDelegate`
+
+```Swift
+
+	func shouldPopOnBackButtonPress() -> Bool {
+		let alert = MyAlertController(title: "A", message: "AA") { success in
+			if(success){
+				app.popVC()
+			}
+		 }
+		alert.showIn(vc: self)
+		return false
+	}
+```
+
