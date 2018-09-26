@@ -90,16 +90,30 @@ import UIKit
 
 class MyNavigationController: UINavigationController ,UINavigationBarDelegate{
     func navigationBar(_ navigationBar: UINavigationBar, shouldPop item: UINavigationItem) -> Bool {
+        if viewControllers.count < navigationBar.items!.count {
+            return true
+        }
         var shouldPop = true
         if let viewController = topViewController as? NavigationControllerBackButtonDelegate {
             shouldPop = viewController.shouldPopOnBackButtonPress()
         }
 
-        if(shouldPop){
-            self.popViewController(animated: true)
-        }
+        if (shouldPop) {
+            DispatchQueue.main.async {
+                self.popViewController(animated: true)
+            }
+        } else {
+            // Prevent the back button from staying in an disabled state
+            for view in navigationBar.subviews {
+                if view.alpha < 1.0 {
+                    UIView.animate(withDuration: 0.25, animations: {
+                        view.alpha = 1.0
+                    })
+                }
+            }
 
-        return shouldPop
+        }
+        return false
     }
 }
 
