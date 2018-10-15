@@ -24,37 +24,41 @@ self.navigationController.pushViewController(defectCreateVC, animated: true)
 
 
 - tableView相当于ListView
-
 - collectionView相当于RecyclerView
-
 - UserDefaults 相当于 SharedPreference，用法
   [Swift中安全优雅的使用UserDefaults](
   https://www.jianshu.com/p/3796886b4953)
-
 - 便利构造器`convenience init()`必须调用类指定构造器`self.init(xx:xx)`
-
 - kotlin中 ?: 运算符相当于 swift中的 ??
-
 - 如何声明一个静态变量 直接使用static
-
 - for循环 常用使用
 
   - `for i`  -> `for index in xx.indices`
   - `foreach & for i` -> `for (index,value) in array.enumerated()`
   - `简单for循环，for(i = a;i<b;i++) ` -> `for i in a..<b`
-
 - protocol:
   optional 修饰的是可选实现的方法[protocol 前需要加@objc]<br>
   无关键字修饰的是必须实现的方法
-
 - [swift如何实现抽象类](https://segmentfault.com/a/1190000013014498)
 
 - swift泛型使用 : Test<T : Any>
-
 - swift泛型传递|泛型方法：func createVertCollectionView <T:Any,V>(tableW : CGFloat,spacing : CGFloat = 0.0,delegate : CommonDelegate<T,V>) 
+```
+
+protocol OfflineParamModel: class {
+    associatedtype T
+}
+
+
+class LocalDefectUpdate: Object, OfflineParamModel {
+    typealias T = Defect
+}
+```
+
+
+
 
 - AnyClass  T.self | XX.self 提示错误不管（编译器有时反应慢）
-
 - swift可以直接返回多个参数|多参数
   eg：func test() -> (Int, String)
   var (i,s) = test()
@@ -277,3 +281,5 @@ tableView.separatorInset = .zero
     1.上网搜索并下载对应的包 如：11.3(15E217) 大约10M以下
 
     2.拷贝至 Finder > 应用程序 > XCode > 显示包内容 > "Contents / Developer /"
+
+- R.swift 文件 引入图片时  先复制图片到对应目录 然后 在拖入项目中 再编译 再使用
