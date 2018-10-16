@@ -5,3 +5,10 @@
 `LSSupportsOpeningDocumentsInPlace `
 
 `Supports opening documents in place`
+
+```Swift
+override func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool{
+    
+}
+```
+
