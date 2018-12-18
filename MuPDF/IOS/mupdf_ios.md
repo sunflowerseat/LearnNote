@@ -117,3 +117,4 @@ override func draw(_ rect: CGRect) {
 	ctx.scaleBy(x: scale.width, y: scale.height)
 }
 ```
+- 边界是否可以滚动 MuPageViewNormal bounces = false
