@@ -52,3 +52,31 @@
 ```objc
    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
 ```
+## 输入框只允许输入数字
+
+```swift
+xxtf.keyboardType = .numberPad 
+xxtf.delegate = self
+
+extension XXX: UITextFieldDelegate {
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        /// 如果是小数文本框则执行下面操作，如果是文字文本框 不需要做任何限制
+        if textField.keyboardType == .numberPad {
+
+            //限制长度
+            if(textField.text!.count > 2 && string != ""){
+                return false
+            }
+            //限制 仅能输入数字
+            let scanner = Scanner(string: string)
+            let numbers = NSCharacterSet(charactersIn: "0123456789")
+            if !scanner.scanCharacters(from: numbers as CharacterSet, into: nil) && string.count != 0 {
+                return false
+            }
+        }
+
+        return true
+    }
+}
+```
+
