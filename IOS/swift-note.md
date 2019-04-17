@@ -1,11 +1,5 @@
-- 新建工程删除Main.Storybord & LaunchScreen.storyboard
-  直接cmd+del删除这两个文件
-  单机工程名称删除Main Interface 和 Launch Screen File
 
-在AppDelegate中加上：
-window = UIWindow(frame: UIScreen.main.bounds)
-        window.makeKeyAndVisible()
-        window.rootViewController = XXVC()
+
 - ViewController 初始化xib
   cmd+N 创建VC时直接勾选 create xib file
 - 页面跳转
