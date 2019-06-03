@@ -6,7 +6,7 @@
   同时，在SearchView中实现了按比例缩放，因此，在Vo对象的draw方法中，不需要再缩放
 
 - 修改pdf的放大倍数
-  需要修改2处
+  需要修改2处 maximumZoomScale & MAX_SCALE
 
 - View渲染
   SearchView
