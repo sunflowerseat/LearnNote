@@ -118,3 +118,5 @@ override func draw(_ rect: CGRect) {
 }
 ```
 - 边界是否可以滚动 MuPageViewNormal bounces = false
+
+Mupdf边界SearchView不会随意晃动 处理 MuPageViewNormal scrollViewDidZoom searchview.frame = tileFrame

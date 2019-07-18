@@ -15,3 +15,12 @@ window.rootViewController = XXVC()
 
 ```
 
+新建IOS
+
+```objective-c
+
+    self.window = [[UIWindow alloc]initWithFrame:UIScreen.mainScreen.bounds];
+    [self.window makeKeyAndVisible];
+    self.window.rootViewController = [[ViewController alloc]init];
+```
+
